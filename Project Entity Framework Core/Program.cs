@@ -11,10 +11,10 @@ internal class Program
             var user3 = new User { Name = "Matvej", Email = "senior_DB@notcat.rs"};
             var user4 = new User { Name = "Darija", Email = "junior_QA@notcat.rs"};
 
-            var book1 = new Book { Title = "Meeting or Coding? Вот в чем вопрос", Author = "Шекспир Уильям" };
-            var book2 = new Book { Title = "Шарповит", Author = "Кирилл и Мефодий" };
-            var book3 = new Book { Title = "Update ТрансСум", Author = "Мирзиёев ШМ" };
-            var book4 = new Book { Title = "Как продебажить жизнь?", Author = "КонсультантПлюс" };
+            var book1 = new Book { Title = "Meeting or Coding? Вот в чем вопрос", Author = "Гайгэкс и Арнесон", Publication = 1974 };
+            var book2 = new Book { Title = "Шарповит", Author = "Криво и Методий", Publication = 2025 };
+            var book3 = new Book { Title = "Update ТрансСум", Author = "Мирзиёев ШМ", Publication = 2024 };
+            var book4 = new Book { Title = "Как продебажить жизнь?", Author = "КонсультантПлюс", Publication = 1984 };
 
             db.Users.Add(user1);
             db.Users.Add(user2);
