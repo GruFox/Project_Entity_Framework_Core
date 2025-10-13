@@ -1,4 +1,6 @@
-﻿namespace Project_Entity_Framework_Core;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Project_Entity_Framework_Core;
 
 internal class Program
 {
@@ -6,27 +8,13 @@ internal class Program
     {
         using (var db = new AppContext())
         {
-            var user1 = new User { Name = "Ilgiz", Email = "senior_C@notcat.rs" };
-            var user2 = new User { Name = "Igor", Email = "not_jun_yet@notcat.rs" };
-            var user3 = new User { Name = "Matvej", Email = "senior_DB@notcat.rs"};
-            var user4 = new User { Name = "Darija", Email = "junior_QA@notcat.rs"};
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
 
-            var book1 = new Book { Title = "Meeting or Coding? Вот в чем вопрос", Author = "Гайгэкс и Арнесон", Publication = 1974 };
-            var book2 = new Book { Title = "Шарповит", Author = "Криво и Методий", Publication = 2025 };
-            var book3 = new Book { Title = "Update ТрансСум", Author = "Мирзиёев ШМ", Publication = 2024 };
-            var book4 = new Book { Title = "Как продебажить жизнь?", Author = "КонсультантПлюс", Publication = 1984 };
+            Manager manager = new Manager(db);
 
-            db.Users.Add(user1);
-            db.Users.Add(user2);
-            db.Users.Add(user3);
-            db.Users.Add(user4);
-
-            db.Books.Add(book1);
-            db.Books.Add(book2);
-            db.Books.Add(book3);
-            db.Books.Add(book4);
-
-            db.SaveChanges();
+            manager.DefaultFillingDataBase();
+            manager.Start();
         }
-    }
+    }    
 }
