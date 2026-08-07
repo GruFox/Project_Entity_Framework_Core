@@ -1,6 +1,6 @@
 # Project Entity Framework Core
 
-Учебный проект по изучению EF Core и работы с SQL Server
+Study project on studying EF Core и работы с SQL Server
 
 ## Requirements (Требования)
 
